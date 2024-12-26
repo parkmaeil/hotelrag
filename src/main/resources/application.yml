@@ -1,15 +1,13 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: myuser
+    password: secret
   ai:
-    openai:
-      chat:
-        options:
-          model: text-embedding-ada-002
-      vectorstore:
-        pgvector:
+    vectorstore:
+      pgvector:
         index-type: HNSW
         distance-type: COSINE_DISTANCE
         dimensions: 1536
+        table-name : movie_vector
+        initialize-schema: true

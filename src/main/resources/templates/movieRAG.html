@@ -29,12 +29,12 @@
                     <!-- Display the movie title and plot -->
                     <li class="list-group-item mb-3">
                         <h5 th:text="${title}"></h5>
-                        <p th:text="${results.content}"></p>
+                        <p th:text="${results}"></p>
 
                         <!-- Loop over YouTube URLs and embed each video -->
                         <div th:each="youtubeUrl : ${youtubeUrls}">
                             <div class="embed-responsive embed-responsive-16by9 mb-3">
-                                <iframe th:src="'https://www.youtube.com/embed/' + ${youtubeUrl.split('v=')[1]}"
+                                <iframe th:src="'https://www.youtube.com/embed/' + ${youtubeUrl}"
                                         frameborder="0" allowfullscreen class="embed-responsive-item"></iframe>
                             </div>
                         </div>

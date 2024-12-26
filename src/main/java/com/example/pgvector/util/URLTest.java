@@ -19,7 +19,7 @@ public class URLTest {
                     String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q="
                             + movieTitle
                             + "&order=relevance"
-                            + "&key=AIzaSyCUCsGUIsRizNLKUWjNt-IWFjGLRDoNw48";
+                            + "&key=AIzaSyCIfwx0r3Hw4flfI0yB--UV8gU25YGMBdg";
 
                 RestTemplate restTemplate = new RestTemplate();
                 ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
@@ -31,7 +31,7 @@ public class URLTest {
                 for (int i = 0; i < items.length(); i++) {
                     JSONObject item = items.getJSONObject(i);
                     String videoId = item.getJSONObject("id").getString("videoId");
-                    videoUrls.add("https://www.youtube.com/watch?v=" + videoId);
+                    videoUrls.add(videoId);
                 }
                 return videoUrls;
             }
