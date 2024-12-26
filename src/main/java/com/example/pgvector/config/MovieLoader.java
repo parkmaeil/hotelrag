@@ -42,9 +42,9 @@ public class MovieLoader {
                for(Document document : documents) {
                    List<Document> splitteddocs = textSplitter.split(document);
                    System.out.println("before adding document: " + document.getContent());
-                   vectorStore.add(splitteddocs);
+                   vectorStore.add(splitteddocs); //임베딩
                    System.out.println("Added document: " + document.getContent());
-                   Thread.sleep(1000);
+                   Thread.sleep(1000); // 1초
                }
                System.out.println("Application is ready to Serve the Requests");
            }

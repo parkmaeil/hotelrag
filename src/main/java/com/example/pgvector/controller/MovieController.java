@@ -28,7 +28,7 @@ public class MovieController {
     public String getRecommendationForm() {
         return "movieRAG";  // returns the HTML file 'recommend.html'
     }
-
+   // 어떤 남자가 억울하게 감옥에 갇혔고, 그는 탈출을 계획합니다 - query ->임베딩[   ,,,,,,,   ]
     @PostMapping("/recommend")
     public String recommendMovies1(@RequestParam("query") String query, Model model) throws Exception {
         // Fetch similar movies using vector store
@@ -37,7 +37,7 @@ public class MovieController {
         if (!results.isEmpty()) {
             Document topResult = results.get(0);
             String movieContent = topResult.getContent();
-            String title=movieContent.substring(movieContent.indexOf("(")+1, movieContent.lastIndexOf(")"));
+            String title=movieContent.substring(movieContent.indexOf("(")+1, movieContent.lastIndexOf(")")); //(쇼생크탈출)
             // Use Jsoup to fetch the YouTube URL
             List<String> url = URLTest.searchYouTube(title);
             model.addAttribute("title", title);
