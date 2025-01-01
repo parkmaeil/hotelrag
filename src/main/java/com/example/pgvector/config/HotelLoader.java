@@ -50,6 +50,3 @@ public class HotelLoader {
            }
     }
 }
-/*
- Spring AI  VS LangChain
- */
