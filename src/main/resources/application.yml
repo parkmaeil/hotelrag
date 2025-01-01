@@ -9,5 +9,5 @@ spring:
         index-type: HNSW
         distance-type: COSINE_DISTANCE
         dimensions: 1536
-        table-name : movie_vector
+        table-name : hotel_vector
         initialize-schema: true

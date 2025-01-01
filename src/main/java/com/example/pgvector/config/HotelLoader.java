@@ -15,22 +15,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Configuration
-public class MovieLoader {
+public class HotelLoader {
 
     private  final VectorStore vectorStore;
     private final JdbcClient jdbcClient;
 
-    @Value("classpath:movie_plots_korean.txt")
+    @Value("classpath:data.txt")
     Resource resource;
 
-    public MovieLoader(VectorStore vectorStore, JdbcClient jdbcClient) {
+    public HotelLoader(VectorStore vectorStore, JdbcClient jdbcClient) {
         this.vectorStore = vectorStore;
         this.jdbcClient = jdbcClient;
     }
 
     @PostConstruct
     public void init() throws Exception {
-           Integer count=jdbcClient.sql("select count(*) from movie_vector")
+           Integer count=jdbcClient.sql("select count(*) from hotel_vector")
                    .query(Integer.class)
                    .single();
            System.out.println("No of Records in the PG Vector Store="+count);
