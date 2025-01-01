@@ -34,7 +34,7 @@ public class HotelController {
         System.out.println(results.size());
 
         String template = """
-                당신은 어느 호텔 직원입니다. 문맥에 따라 고객의 질문에 정중하게 대답해 주십시오. 
+                당신은 어느 호텔 직원입니다. 문맥에 따라 고객의 질문에 정중하게 답변해 주십시오. 
                 컨텍스트가 질문에 대답할 수 없는 경우 '모르겠습니다'라고 대답하세요.
                                
                 컨텍스트:

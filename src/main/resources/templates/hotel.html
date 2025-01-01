@@ -59,6 +59,7 @@
         try {
             // Fetch streaming response
             const response = await fetch(`/question?question=${encodeURIComponent(userMessage)}`);
+            // 스트리밍 방식으로 응답부분
             const reader = response.body.getReader();
             let botMessageElement = appendMessage('Bot', ''); // Add empty bot message
             let contentElement = botMessageElement.querySelector('.content');
